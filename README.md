@@ -2,4 +2,4 @@
 
 > This is an implementation of the `printf()` function in the C standard library.
 
-A project by: Ini Arthur and Beatrice Solomon &copy '23.
+A project by: Ini Arthur and Beatrice Solomon &copy; '23.

@@ -17,7 +17,7 @@ int print_int_arg(va_list ap)
  */
 int print_str_arg(va_list ap)
 {
-	return (print_str_arg(va_arg(ap, char *)));
+	return (print_str(va_arg(ap, char *)));
 }
 
 /**

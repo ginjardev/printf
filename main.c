@@ -7,10 +7,7 @@
 
 int main(void)
 {
-	int number = 234;
-	int b = print_int(number);
-	/*printf("%d", b);*/
-	puts("");
-	printf("%d", b);
+	int i = _printf("%d disciples %s and %c here.\n", 12, "of", 'J');
+	printf("%d\n", i);
 	puts("");
 }

@@ -11,6 +11,7 @@ int _putchar(char c);
 int _strlen(char *str);
 int print_str(char *str);
 int print_int(int num);
+int print_address(const void* ptr);
 int print_bin(unsigned int num);
 int print_hex(unsigned int num);
 int print_hex_cap(unsigned int num);

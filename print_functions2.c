@@ -73,3 +73,39 @@ int print_bin(unsigned int num)
 	else
 		return (print_bin(num / 2) + _putchar(num % 2 + '0'));
 }
+
+/**
+ * print_address - prints addres or pointer value
+ * @ptr: pointer parameter
+ * Return: number of address characters
+ */
+int print_address(const void* ptr)
+{
+
+	char addressStr[20]; /* Assume maximum of 20 characters for the address.*/
+	int i = 0;
+	uintptr_t address = (uintptr_t)ptr; /* Cast the pointer to an integer for printing. */
+
+    	/* Convert the address to string and print it */
+    	while (address > 0)
+	{
+        	addressStr[i++] = (address % 16 < 10) ? (address % 16 + '0') : (address % 16 - 10 + 'a');
+        	address /= 16;
+    	}
+
+   	 addressStr[i++] = 'x';
+   	 addressStr[i++] = '0';
+
+    	/* Reverse the string */
+    	for (int start = 0, end = i - 1; start < end; start++, end--)
+    	{
+        	char temp = addressStr[start];
+        	addressStr[start] = addressStr[end];
+       		addressStr[end] = temp;
+    	}
+
+    	/* Print the address */
+    	write(STDOUT_FILENO, addressStr, i);
+
+    	return (i);
+}

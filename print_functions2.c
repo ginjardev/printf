@@ -82,7 +82,7 @@ int print_bin(unsigned int num)
 int print_address(const void *ptr)
 {
 	char addressStr[20];
-	unsigned int start, end, i = 0;
+	unsigned int start, end, j, i = 0;
 	uintptr_t address = (uintptr_t)ptr;
 
 	/* convert address to string */
@@ -108,7 +108,13 @@ int print_address(const void *ptr)
 	}
 
 	/* print address */
-	write(1, addressStr, i);
+	/* write(1, addressStr, i);*/
+	j = 0;
+	while (addressStr[j] != '\0')
+	{
+		_putchar(addressStr[j]);
+		j++;
+	}
 
 	return (i);
 }

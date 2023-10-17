@@ -18,6 +18,10 @@ int print_int_arg(va_list ap)
 int print_str_arg(va_list ap)
 {
 	char *s = va_arg(ap, char *);
+
+	if (s == NULL)
+		s = "(null)";
+
 	return (print_str(s));
 }
 

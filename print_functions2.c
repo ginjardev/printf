@@ -108,13 +108,7 @@ int print_address(const void *ptr)
 	}
 
 	/* print address */
-	/* write(1, addressStr, i);*/
-	j = 0;
-	while (addressStr[j] != '\0')
-	{
-		_putchar(addressStr[j]);
-		j++;
-	}
+	write(1, addressStr, i);
 
-	return (j);
+	return (i);
 }

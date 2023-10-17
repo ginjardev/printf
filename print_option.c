@@ -36,10 +36,5 @@ int print_option(char c, va_list ap)
 		_putchar('%');
 		return (1);
 	}
-	else if (c == 'r')
-	{
-		print_str("%r");
-		return (1);
-	}
 	return (0);
 }

@@ -5,7 +5,6 @@
  * @c: character parameter
  * Return: 1 on success
  */
-
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
@@ -16,7 +15,6 @@ int _putchar(char c)
  * @str: pointer to string or char array
  * Return: length of string
  */
-
 int _strlen(char *str)
 {
 	unsigned int count = 0;
@@ -34,7 +32,6 @@ int _strlen(char *str)
  * @str: string pointer or char array
  * Return: string length
  */
-
 int print_str(char *str)
 {
 	unsigned int length = _strlen(str);
@@ -48,7 +45,6 @@ int print_str(char *str)
  * @num: number parameter
  * Return: number of characters printed
  */
-
 int print_int(int num)
 {
 	char buffer[20]; /* assume buffer size 20 */
@@ -91,4 +87,17 @@ int print_int(int num)
 
 	return (counter);
 
+}
+
+/**
+ * print_unsigned_int - prints unsigned int to stdout
+ * @num: unsigned int parameter
+ * Return: number of characters printed
+ */
+int print_unsigned_int(unsigned int num)
+{
+	if (num <= 9)
+		return (_putchar(num + '0'));
+	else
+		return (print_unsigned_int(num / 10) + _putchar(num % 10 + '0'));
 }

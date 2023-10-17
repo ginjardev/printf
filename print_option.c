@@ -15,6 +15,7 @@ int print_option(char c, va_list ap)
 		{'s', print_str_arg},
 		{'d', print_int_arg},
 		{'i', print_int_arg},
+		{'u', print_uint_arg},
 		{'\0', NULL},
 	};
 

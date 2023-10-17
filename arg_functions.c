@@ -29,3 +29,13 @@ int print_char_arg(va_list ap)
 {
 	return (_putchar(va_arg(ap, int)));
 }
+
+/**
+ * print_uint_arg - prints unsigned integer
+ * @ap: va_list object
+ * Return: number of characters
+ */
+int print_uint_arg(va_list ap)
+{
+	return (print_unsigned_int(va_arg(ap, unsigned int)));
+}

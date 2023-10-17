@@ -34,13 +34,13 @@ int _strlen(char *str)
  */
 int print_str(char *str)
 {
-	unsigned int i, length = _strlen(str);
+	unsigned int i;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		_putchar(str[i]);
 	}
-	return (length);
+	return (i);
 }
 
 /**

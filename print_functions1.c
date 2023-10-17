@@ -11,6 +11,22 @@ int _putchar(char c)
 }
 
 /**
+ * print_str - prints string to stdout
+ * @str: string parameter
+ * Return: string length
+ */
+int print_str(char *str)
+{
+	unsigned int i;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		_putchar(str[i]);
+	}
+	return (i);
+}
+
+/**
  * exponential - a to the power of b
  * @a: base number
  * @b: exponent

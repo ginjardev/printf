@@ -19,6 +19,9 @@ int print_str(char *str)
 {
 	unsigned int i;
 
+	if (str == NULL)
+		str = "(null)";
+
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		_putchar(str[i]);

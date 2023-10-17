@@ -34,9 +34,12 @@ int _strlen(char *str)
  */
 int print_str(char *str)
 {
-	unsigned int length = _strlen(str);
+	unsigned int i, length = _strlen(str);
 
-	write(1, str, length);
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		_putchar(str[i]);
+	}
 	return (length);
 }
 

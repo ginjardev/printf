@@ -30,9 +30,9 @@ int print_hex_cap(unsigned int num)
 	else
 	{
 		if (num % 16 <= 9)
-			return (print_hex(num / 16) + _putchar(num % 16 + '0'));
+			return (print_hex_cap(num / 16) + _putchar(num % 16 + '0'));
 		else
-			return (print_hex(num / 16) + _putchar(num % 16 + 55));
+			return (print_hex_cap(num / 16) + _putchar(num % 16 + 55));
 	}
 	return (0);
 }
@@ -54,9 +54,9 @@ int print_hex(unsigned int num)
 	else
 	{
 		if (num % 16 <= 9)
-			return (p_hex(num / 16) + _putchar(num % 16 + '0'));
+			return (print_hex(num / 16) + _putchar(num % 16 + '0'));
 		else
-			return (p_hex(num / 16) + _putchar(num % 16 + 87));
+			return (print_hex(num / 16) + _putchar(num % 16 + 87));
 	}
 	return (0);
 }
@@ -71,5 +71,5 @@ int print_bin(unsigned int num)
 	if (num < 2)
 		return (_putchar(num + '0'));
 	else
-		return (p_bin(num / 2) + _putchar(num % 2 + '0'));
+		return (print_bin(num / 2) + _putchar(num % 2 + '0'));
 }

@@ -16,6 +16,10 @@ int print_option(char c, va_list ap)
 		{'d', print_int_arg},
 		{'i', print_int_arg},
 		{'u', print_uint_arg},
+		{'x', print_hex_arg},
+		{'X', print_hexcap_arg},
+		{'o', print_oct_arg},
+		{'b', print_bin_arg},
 		{'\0', NULL},
 	};
 
@@ -29,6 +33,11 @@ int print_option(char c, va_list ap)
 	if (c == '%')
 	{
 		_putchar('%');
+		return (1);
+	}
+	else if (c == 'r')
+	{
+		print_str("%r");
 		return (1);
 	}
 	return (0);

@@ -40,7 +40,7 @@ int print_int(int num)
 	sign = 1;
 	digit = 0;
 	size = 1;
-	count = number;
+	count = num;
 	result = 0;
 
 	if (number < 0)
@@ -66,7 +66,7 @@ int print_int(int num)
 		size--;
 		result++;
 	}
-	_putchar(counter % 10 + '0');
+	_putchar(count % 10 + '0');
 	result++;
 	return (result);
 }

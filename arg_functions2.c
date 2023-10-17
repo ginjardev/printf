@@ -29,3 +29,13 @@ int print_bin_arg(va_list ap)
 {
 	return (print_bin(va_arg(ap, unsigned int)));
 }
+
+/**
+ * print_address_arg - prints memory address
+ * @ap: va_list object
+ * Return: number of address characters
+ */
+int print_address_arg(va_list ap)
+{
+	return (print_address(va_arg(ap, void *)));
+}

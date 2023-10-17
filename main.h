@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <stdint.h>
 
 int _printf(const char *format, ...);
 int _putchar(char c);
@@ -17,6 +18,7 @@ int print_hex(unsigned int num);
 int print_hex_cap(unsigned int num);
 int print_oct(unsigned int num);
 int print_unsigned_int(unsigned int);
+int print_address_arg(va_list ap);
 int print_int_arg(va_list ap);
 int print_uint_arg(va_list ap);
 int print_str_arg(va_list ap);

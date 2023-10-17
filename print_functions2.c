@@ -83,7 +83,7 @@ int print_address(const void* ptr)
 {
 
 	char addressStr[20]; /* Assume maximum of 20 characters for the address.*/
-	int i = 0;
+	int start, end, i = 0;
 	uintptr_t address = (uintptr_t)ptr; /* Cast the pointer to an integer for printing. */
 
     	/* Convert the address to string and print it */
@@ -97,7 +97,7 @@ int print_address(const void* ptr)
    	 addressStr[i++] = '0';
 
     	/* Reverse the string */
-    	for (int start = 0, end = i - 1; start < end; start++, end--)
+    	for (start = 0, end = i - 1; start < end; start++, end--)
     	{
         	char temp = addressStr[start];
         	addressStr[start] = addressStr[end];

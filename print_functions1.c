@@ -11,36 +11,20 @@ int _putchar(char c)
 }
 
 /**
- * _strlen - finds length of string
- * @str: pointer to string or char array
- * Return: length of string
- */
-int _strlen(char *str)
+ * exponential - a to the power of b
+ * @a: base number
+ * @b: exponent
+ * Description: calcuates a^b
+ * Return: a^b
+ **/
+int exponential(int a, int b)
 {
-	unsigned int count = 0;
+	if (b < 0)
+		return (-1);
+	if (b == 0)
+		return (1);
 
-	while (*str != '\0')
-	{
-		++count;
-		++str;
-	}
-	return (count);
-}
-
-/**
- * print_str - writes string to stdout
- * @str: string pointer or char array
- * Return: string length
- */
-int print_str(char *str)
-{
-	unsigned int i;
-
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		_putchar(str[i]);
-	}
-	return (i);
+	return (a * exponential(a, b - 1));
 }
 
 /**
@@ -50,46 +34,41 @@ int print_str(char *str)
  */
 int print_int(int num)
 {
-	char buffer[20]; /* assume buffer size 20 */
-	int i = 0;
-	int isNegative = 0;
-	int counter = 0;
+	int size, digit, result;
+	long count, sign;
 
-	/* handle negative number */
-	if (num < 0)
+	sign = 1;
+	digit = 0;
+	size = 1;
+	count = number;
+	result = 0;
+
+	if (number < 0)
 	{
-		isNegative = 1;
-		num = -num;
+		_putchar('-');
+		sign = -1;
+		count *= sign;
+		result++;
 	}
 
-	/* handle 0 */
-	if (num == 0)
+	for (; count >= 10; size++)
 	{
-		buffer[i++] = '0';
-	}
-	else
-	{
-		while (num > 0)
-		{
-			buffer[i++] = num % 10 + '0';
-			num /= 10;
-		}
+		count = counter / 10;
 	}
 
-	if (isNegative)
+	count = sign * (long)number;
+
+	while (size >= 2)
 	{
-		buffer[i++] = '-';
+		digit = (count / exponential(10, size - 1));
+		_putchar(digit + '0');
+		count = count % exponential(10, size - 1);
+		size--;
+		result++;
 	}
-
-	/* print number characters in reverse */
-	while (i > 0)
-	{
-		write(1, &buffer[--i], 1);
-		counter++;
-	}
-
-	return (counter);
-
+	_putchar(counter % 10 + '0');
+	result++;
+	return (result);
 }
 
 /**

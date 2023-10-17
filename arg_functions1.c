@@ -39,3 +39,13 @@ int print_uint_arg(va_list ap)
 {
 	return (print_unsigned_int(va_arg(ap, unsigned int)));
 }
+
+/**
+ * print_oct_arg - prints unsigned octal number
+ * @ap: va_list object
+ * Return: number of characters
+ */
+int print_oct_arg(va_list ap)
+{
+	return (print_oct(va_arg(ap, unsigned int)));
+}

@@ -43,7 +43,7 @@ int print_int(int num)
 	count = num;
 	result = 0;
 
-	if (number < 0)
+	if (num < 0)
 	{
 		_putchar('-');
 		sign = -1;
@@ -53,10 +53,10 @@ int print_int(int num)
 
 	for (; count >= 10; size++)
 	{
-		count = counter / 10;
+		count = count / 10;
 	}
 
-	count = sign * (long)number;
+	count = sign * (long)num;
 
 	while (size >= 2)
 	{

@@ -116,5 +116,5 @@ int print_address(const void *ptr)
 		j++;
 	}
 
-	return (i);
+	return (j);
 }

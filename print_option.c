@@ -2,40 +2,48 @@
 
 /**
  * print_option - prints variable length arguments by format
- * @c: format specifier
+ * @format: string format
+ * @choice: char_option array of struct
  * @ap: argument pointer
  * Return: number of characters
  */
-int print_option(char c, va_list ap)
+int print_option(const char *format, char_option choice[], va_list ap)
 {
-	int i;
+	int i = 0,  counter = 0;
+	int j;
 
-	char_option choice[] = {
-		{'c', print_char_arg},
-		{'s', print_str_arg},
-		{'d', print_int_arg},
-		{'i', print_int_arg},
-		{'u', print_uint_arg},
-		{'x', print_hex_arg},
-		{'X', print_hexcap_arg},
-		{'o', print_oct_arg},
-		{'b', print_bin_arg},
-		{'p', print_address_arg},
-		{'\0', NULL},
-	};
-
-	for (i = 0; choice[i].character != '\0'; i++)
+	while (format[i])
 	{
-		if (choice[i].character == c)
+		if (format[i] == '%' && format[i + 1] != '%' && format[i + 1] != '\0')
 		{
-			return (choice[i].print_arg(ap));
+			int character_found = 0;
+
+			for (j = 0; choice[j].character !=  '\0'; j++)
+			{
+				if (format[i + 1] == choice[j].character)
+				{
+					character_found = 1;
+					counter += choice[j].print_arg(ap);
+					i++;
+					break;
+				}
+			}
+			if (!character_found)
+				counter += _putchar('%');
 		}
+		else if (format[i] == '%' && format[i + 1] == '%')
+		{
+			counter += _putchar('%');
+			i++;
+		}
+		else if (format[0] == '%' && format[1] == '\0')
+		{
+			return (-1);
+		}
+		else
+			counter += _putchar(format[i]);
+		i++;
 	}
-	if (c == '%')
-	{
-		_putchar('%');
-		return (1);
-	}
-	return (0);
+	return (counter);
 }
 

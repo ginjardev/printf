@@ -31,6 +31,7 @@ int print_oct(unsigned int num);
 int print_unsigned_int(unsigned int);
 int print_str_rev(va_list ap);
 int print_address_arg(va_list ap);
+int print_custom_str(va_list ap);
 int print_int_arg(va_list ap);
 int print_uint_arg(va_list ap);
 int print_str_arg(va_list ap);

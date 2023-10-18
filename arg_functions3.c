@@ -45,3 +45,26 @@ int print_str_rev(va_list ap)
 
 	return (length);
 }
+
+/**
+ * print_custom_str - prints custom string
+ * @ap: va_list object
+ * Return: string length
+ */
+int print_custom_str(va_list ap)
+{
+	int i, j = 0;
+	char *s = va_arg(ap, char *);
+
+	for (i = 0; s[i]; i++)
+	{
+		if (s[i] >= 32 && s[i] < 127)
+			j += _putchar(s[i]);
+		else if (s[i] > 14)
+			j += _printf("\\x%X", s[i]);
+		else
+			j += _printf("\\x0%X", s[i]);
+	}
+
+	return (j);
+}

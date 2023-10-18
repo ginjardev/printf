@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 		{'X', print_hexcap_arg}, {'o', print_oct_arg},
 		{'b', print_bin_arg}, {'p', print_address_arg},
 		{'r', print_str_rev}, {'S', print_custom_str},
-		{'\0', NULL},
+		{'R', print_rot13_arg}, {'\0', NULL},
 	};
 
 	if (format == NULL)

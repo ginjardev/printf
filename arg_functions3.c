@@ -37,8 +37,8 @@ int print_str_rev(va_list ap)
 
 	length = _strlen(s);
 
-	for (i = len - 1; i >= 0; i--)
-		_putchar(str[i]);
+	for (i = length - 1; i >= 0; i--)
+		_putchar(s[i]);
 
 	return (length);
 }

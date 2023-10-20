@@ -38,12 +38,17 @@ int print_bin_arg(va_list ap)
 int print_address_arg(va_list ap)
 {
 	void *ptr;
+	int i;
+	char *s = "(nil)(nil)";
 
 	ptr = va_arg(ap, void *);
 	if (ptr == NULL)
 	{
-		print_str("(nil)(nil)");
-		return (1);
+		for (i = 0; s[i] != '\0'; i++)
+		{
+			_putchar(s[i]);
+		}
+		return (i);
 	}
 
 	return (print_address(ptr));

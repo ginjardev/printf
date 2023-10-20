@@ -37,7 +37,12 @@ int print_bin_arg(va_list ap)
  */
 int print_address_arg(va_list ap)
 {
-	return (print_address(va_arg(ap, void *)));
+	void *ptr;
+	ptr = va_arg(ap, void *);
+	if (ptr == NULL)
+		return ("(nil)(nil)");
+
+	return (print_address(ptr));
 }
 
 /**

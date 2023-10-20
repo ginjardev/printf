@@ -43,6 +43,7 @@ int print_address_arg(va_list ap)
 	if (ptr == NULL)
 	{
 		print_str("(nil)(nil)");
+		return (1);
 	}
 
 	return (print_address(ptr));

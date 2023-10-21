@@ -39,7 +39,7 @@ int print_address_arg(va_list ap)
 {
 	void *ptr;
 	int i;
-	char *s = "(nil)(nil)";
+	char *s = "(nil)";
 
 	ptr = va_arg(ap, void *);
 	if (ptr == NULL)
